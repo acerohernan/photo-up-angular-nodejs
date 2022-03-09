@@ -1,0 +1,43 @@
+<div class="col-lg-5 mx-auto card p-4">
+  <form>
+    <div class="form-group">
+      <input
+        #title
+        type="text"
+        class="form-control"
+        placeholder="Photo's Title"
+        [value]="photoInfo.title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <textarea
+        #description
+        class="form-control"
+        placeholder="Photo's Description"
+        [value]="photoInfo.description"
+        required
+      ></textarea>
+      <img
+        [src]="'http://localhost:4000/' + photoInfo.imagePath"
+        alt="noImage"
+        class="img-card-top img-fluid"
+      />
+      <div class="row pt-2">
+        <div class="col-6">
+          <button
+            class="btn btn-primary w-100"
+            (click)="editPhoto(title, description)"
+          >
+            UPDATE
+          </button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-primary w-100" (click)="deletePhoto()">
+            DELETE
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
